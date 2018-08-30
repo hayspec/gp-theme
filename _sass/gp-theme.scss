@@ -5,6 +5,8 @@
 @import "highlight";
 
 $green: #3DD4B5;
+$main-bg: #144556;
+$footer-bg: #13262C;
 
 html {
   ms-text-size-adjust: 100%;
@@ -22,7 +24,7 @@ body {
   font: 16px/1.8 "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #FFF;
   font-weight: normal;
-  background: #14242A;
+  background: $main-bg;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -174,7 +176,7 @@ header {
 
 footer {
   margin-top: 5rem;
-  background-color: #0E1B20;
+  background-color: $footer-bg;
   padding: 3rem 0;
   font-size: 15px;
 }
