@@ -21,20 +21,14 @@
     <div class="grid-container">
       <div class="grid-x align-middle">
         <div class="cell small-12 medium-auto">
-          <img src="{{ '/assets/images/hayspec.svg' | relative_url }}" />
+          <img src="{{ site.logo | relative_url }}" />
         </div>
 
         <div class="cell small-12 medium-7">
           <ul class="menu">
-            <li>
-              <a href="#hayspec-framework">What's Hayspec?</a>
-            </li>
-            <li>
-              <a href="#getting-started">Get Started</a>
-            </li>
-            <li>
-              <a href="#writting-tests">Writing tests</a>
-            </li>
+            {% for item in site.menu %}
+            <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+            {% endfor %}
             <li>
               <a href="{{ site.github.repository_url }}">View on Github
                 <img class="icon" src="{{ '/assets/images/icon-github.svg' | relative_url }}" />
@@ -46,7 +40,7 @@
 
       <div class="grid-x intro align-center">
         <div class="cell small-12 medium-10 large-8">
-          <strong>hayspec</strong> – a magic-free framework for testing JavaScript and NodeJS applications.
+          <strong>{{ site.title }}</strong> – {{ site.heading }}
         </div>
       </div>
 
@@ -234,19 +228,13 @@
     <div class="grid-container">
       <div class="grid-x grid-margin-x">
         <div class="cell small-12 medium-2">
-          <img src="{{ '/assets/images/hayspec.svg' | relative_url }}" />
+          <img src="{{ site.logo | relative_url }}" />
         </div>
         <div class="cell small-12 medium-auto">
           <ul class="menu">
-            <li>
-              <a href="#hayspec-framework">What's Hayspec?</a>
-            </li>
-            <li>
-              <a href="#getting-started">Get Started</a>
-            </li>
-            <li>
-              <a href="#writting-tests">Writing tests</a>
-            </li>
+            {% for item in site.menu %}
+            <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+            {% endfor %}
             <li>
               <a href="{{ site.github.repository_url }}">View on Github</a>
             </li>
@@ -254,14 +242,15 @@
         </div>
 
         <div class="cell small-12 medium-5 text-right">
-          <a href="mailto:info@hayspec.io">info@hayspec.io</a>
-          <br/> Copyright © 2018 hayspec, All rights reserved.
+          <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+          <br/> Copyright © 2018 {{ site.title }}, All rights reserved.
         </div>
       </div>
     </div>
   </footer>
 
   <script>
+  {% if site.google_analytics %}
     (function (i, s, o, g, r, a, m) {
       i['GoogleAnalyticsObject'] = r;
       i[r] = i[r] || function () {
@@ -275,8 +264,8 @@
     })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
     ga('create', '{{ site.google_analytics }}', 'auto');
     ga('send', 'pageview');
+  {% endif %}
   </script>
 
 </body>
-
 </html>
